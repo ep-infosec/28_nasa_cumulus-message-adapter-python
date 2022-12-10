@@ -1,0 +1,51 @@
+{
+  "cumulus_meta": {
+    "task": "ExampleTask",
+    "stack": "example",
+    "buckets": {
+      "internal": "example-internal",
+      "private": "example-private",
+      "protected": "example-protected",
+      "public": "example-public"
+    },
+    "message_source": "local",
+    "state_machine": "arn:aws:states:us-east-1:433612427488:stateMachine:LpdaacCumulusDiscoverPdrsSt-s1KcHE6MgsTJ",
+    "workflow_name": "ExampleWorkflow",
+    "execution_name": "16b2cb46ae879f09047dfa677",
+    "createdAt": 1517326755526
+  },
+  "meta": {
+    "workflow_tasks": {
+      "ExampleTask": ""
+    },
+    "distribution_endpoint": "https://g928e05in1.execute-api.us-east-1.amazonaws.com/dev/",
+    "topic_arn": "arn:aws:sns:us-east-1:433612427488:lpdaac-cumulus-sftrackerSns-GIMUQEBE00QB",
+    "queues": {
+      "startSF": "https://sqs.us-east-1.amazonaws.com/433612427488/lpdaac-cumulus-startSF"
+    },
+    "provider": {
+      "createdAt": 1517326673419,
+      "id": "LPDAAC_HTTPS",
+      "host": "https://e4ftl01.cr.usgs.gov:40521",
+      "globalConnectionLimit": 10,
+      "updatedAt": 1517326673419,
+      "protocol": "http"
+    },
+    "collection": {
+      "example": "collection"
+    }
+  },
+  "workflow_config": {
+    "DiscoverPdrs": {
+      "useQueue": false,
+      "stack": "{{$.cumulus_meta.stack}}",
+      "provider": "{{$.meta.provider}}",
+      "buckets": "{{$.cumulus_meta.buckets}}",
+      "collection": "{{$.meta.collection}}"
+    }
+  },
+  "payload": {
+    "hello": "world"
+  },
+  "exception": null
+}
